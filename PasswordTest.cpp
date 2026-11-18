@@ -35,6 +35,20 @@ TEST(PasswordTest, empty_string)
         ASSERT_EQ(0, actual);
 }
 
+TEST(PasswordTest, leading_number)
+{
+        Password my_password;
+        int actual = my_password.count_leading_characters("7777$@sbgti");
+        ASSERT_EQ(4, actual);
+}
+
+TEST(PasswordTest, leading_special_character)
+{
+        Password my_password;
+        int actual = my_password.count_leading_characters("#######kbhggkj385ubf");
+        ASSERT_EQ(7, actual);
+}
+
 
 TEST(PasswordTest, empty_string_ul)
 {
